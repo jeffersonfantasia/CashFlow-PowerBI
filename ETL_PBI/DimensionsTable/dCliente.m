@@ -5,6 +5,6 @@ let
     dCliente1 = #"7bcfcd1b-9374-4c30-811e-29d2a8f08f62"{[entity="dCliente"]}[Data],
     
     #"Outras Colunas Removidas" = 
-        Table.SelectColumns(dCliente1,{"CODCLI", "CLIENTE", "PRACA", "FANTASIA", "CODREDE", "REDE"})
+        Table.SelectColumns(dCliente1,{"CODCLI", "CLIENTE", "REDE", "CLIENTE_REDE", "PRACA"})
 in
     #"Outras Colunas Removidas"
