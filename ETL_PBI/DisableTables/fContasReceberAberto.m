@@ -20,7 +20,7 @@ let
             else 4, type number),
     
     #"Outras Colunas Removidas" = 
-        Table.SelectColumns(#"Num Adicionada",{"CODFILIAL", "CODCLI", "DUPLICATA", "DTEMISSAO", "DTVENC", "DTPAG", "STATUS", "CODCOB", "VALOR", "VALORLIQ", "CODUSUR", "Receitas", "Num"}),
+        Table.SelectColumns(#"Num Adicionada",{"CODFILIAL", "CODCLI", "DUPLICATA", "DTEMISSAO", "DTVENC", "DTPAG", "CODCOB", "VALOR", "VALORLIQ", "CODUSUR", "Receitas", "Num"}),
     
     #"Tipo Alterado" = 
         Table.TransformColumnTypes(#"Outras Colunas Removidas",{{"DTEMISSAO", type date}, {"DTVENC", type date}, {"DTPAG", type date}})

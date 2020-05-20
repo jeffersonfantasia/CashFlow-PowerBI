@@ -4,14 +4,6 @@ SELECT L.CODFILIAL,
        L.DTEMISSAO,
        L.DTVENC,
        L.DTPAGTO,
-       (CASE
-         WHEN (L.DTVENC < TRUNC(SYSDATE) AND L.DTPAGTO IS NULL) THEN
-          'VENCIDO'
-         WHEN L.DTPAGTO IS NULL THEN
-          'A VENCER'
-         ELSE
-          'PAGO'
-       END) AS STATUS,
        L.CODCONTA,
        L.CODFORNEC,
        L.TIPOPARCEIRO,

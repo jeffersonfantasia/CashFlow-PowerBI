@@ -26,7 +26,7 @@ let
         Table.RenameColumns(#"Num Adicionada",{{"DTPAGTO", "DTPAG"}}),
     
     #"Outras Colunas Removidas" = 
-        Table.SelectColumns(#"Colunas Renomeadas",{"CODFILIAL", "RECNUM", "DTEMISSAO", "DTVENC", "DTPAG", "STATUS", "CODCONTA", "CODFORNEC", "TIPOPARCEIRO", "HISTORICO", "DUPLICATA", "TIPOLANC", "VALOR", "VALORLIQ", "HISTORICO2", "Despesas", "Num"}),
+        Table.SelectColumns(#"Colunas Renomeadas",{"CODFILIAL", "RECNUM", "DTEMISSAO", "DTVENC", "DTPAG", "CODCONTA", "CODFORNEC", "TIPOPARCEIRO", "HISTORICO", "DUPLICATA", "TIPOLANC", "VALOR", "VALORLIQ", "HISTORICO2", "Despesas", "Num"}),
     
     #"Tipo Alterado" = 
         Table.TransformColumnTypes(#"Outras Colunas Removidas",{{"DTEMISSAO", type date}, {"DTVENC", type date}, {"DTPAG", type date}})

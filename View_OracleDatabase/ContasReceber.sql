@@ -5,14 +5,6 @@ SELECT T.CODFILIAL,
        T.DTEMISSAO,
        T.DTVENC,
        T.DTPAG,
-       (CASE
-         WHEN (T.DTVENC < TRUNC(SYSDATE) AND T.DTPAG IS NULL) THEN
-          'VENCIDO'
-         WHEN T.DTPAG IS NULL THEN
-          'A VENCER'
-         ELSE
-          'PAGO'
-       END) AS STATUS,
        T.CODCOB,
        NVL(B.CARTAO, 'N') AS CARTAO,
        T.VALOR,

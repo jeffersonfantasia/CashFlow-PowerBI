@@ -22,11 +22,8 @@ let
             else if [Receitas] = "Varejo" then 3 
             else 4, type number),
     
-    #"Status Adicionada" = 
-        Table.AddColumn(#"Num Adicionada", "STATUS", each "PAGO", type text),
-    
     #"Outras Colunas Removidas" = 
-        Table.SelectColumns(#"Status Adicionada",{"CODFILIAL", "CODCLI", "DUPLICATA", "DTPAG", "DTVENC", "DTEMISSAO", "STATUS", "CODCOB", "VALORLIQ", "CODUSUR", "Receitas", "Num"}),
+        Table.SelectColumns(#"Num Adicionada",{"CODFILIAL", "CODCLI", "DUPLICATA", "DTPAG", "DTVENC", "DTEMISSAO", "CODCOB", "VALORLIQ", "CODUSUR", "Receitas", "Num"}),
     
     #"Tipo Alterado" = 
         Table.TransformColumnTypes(#"Outras Colunas Removidas",{{"DTPAG", type date}, {"DTVENC", type date}, {"DTEMISSAO", type date}})
